@@ -40,7 +40,7 @@ pub async fn deploy_contract(cid: String) -> Result<H160, String> {
     let client = Arc::new(client);
 
     // create a factory which will be used to deploy instances of the contract
-    let factory = ContractFactory::new(abi, bytecode, client.clone());
+    let factory = ContractFactory::new(abi, bytecode, client);
 
     // deploy it with the constructor arguments
     let contract = match factory.deploy(cid) {

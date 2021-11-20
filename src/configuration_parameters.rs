@@ -29,7 +29,9 @@ impl ConfigurationParameters {
 
 fn get_eligible_arguments_for_app(app_name: &str) -> clap::ArgMatches {
     App::new(app_name)
-        .about("IPFS Smart Contract.")
+        .about(
+            "IPFS Smart Contract:Upload a file to IPFS and then store the CID in a smart contract.",
+        )
         .version("1.0.0")
         .arg(
             Arg::with_name("file_path")

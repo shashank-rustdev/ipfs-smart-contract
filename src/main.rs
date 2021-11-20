@@ -1,3 +1,9 @@
+#![cfg_attr(
+    feature = "cargo-clippy",
+    deny(
+        clippy::unwrap_used
+    )
+)]
 use contract::deploy_contract;
 use ipfs::upload_file;
 

@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'ipfs_smart_contract'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=ipfs_smart_contract",
+                    "--package=ipfs_smart_contract"
+                ],
+                "filter": {
+                    "name": "ipfs_smart_contract",
+                    "kind": "bin"
+                }
+            },
+            "args": ["--file-path", "${workspaceFolder}/test-bed/test-data.txt"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'ipfs_smart_contract'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=ipfs_smart_contract",
+                    "--package=ipfs_smart_contract"
+                ],
+                "filter": {
+                    "name": "ipfs_smart_contract",
+                    "kind": "bin"
+                }
+            },
+            "args": ["--file-path", "${workspaceFolder}/test-bed/test-data.txt"],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
